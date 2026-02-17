@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-registerFont(path.join(__dirname, 'public', 'fonts', 'rb.ttf'), { family: 'rb' });
+registerFont(path.join(__dirname, 'public', 'fonts', 'rb.otf'), { family: 'rb' });
 
 
 app.get('/', (req, res) => {
@@ -30,7 +30,7 @@ app.post('/add-text', async (req, res) => {
         ctx.drawImage(image, 0, 0);
 
         // إضافة النص إلى الصورة
-        ctx.font = '50px rb';
+        ctx.font = '42px rb';
         ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
         ctx.fillText(name, canvas.width / 2 + 200, canvas.height / 2);
