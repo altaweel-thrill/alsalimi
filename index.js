@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.post('/add-text', async (req, res) => {
     const name = req.body.name;
-    const imagePath = path.join(__dirname, 'image.jpg'); // المسار إلى الصورة الأصلية
+    const imagePath = path.join(__dirname, 'image.png'); // المسار إلى الصورة الأصلية
     const outputPath = path.join(__dirname, 'public', 'output.jpg'); // المسار إلى الصورة المحررة
 
     try {
@@ -33,7 +33,7 @@ app.post('/add-text', async (req, res) => {
         ctx.font = '70px rb';
         ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
-        ctx.fillText(name, canvas.width / 2, 1300);
+        ctx.fillText(name, canvas.width / 2 + 200, canvas.height / 2);
 
         // حفظ الصورة المحررة
         const out = fs.createWriteStream(outputPath);
