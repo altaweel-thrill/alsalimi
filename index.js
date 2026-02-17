@@ -30,7 +30,7 @@ app.post('/add-text', async (req, res) => {
         ctx.drawImage(image, 0, 0);
 
         // إضافة النص إلى الصورة
-        ctx.font = '70px rb';
+        ctx.font = '50px rb';
         ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
         ctx.fillText(name, canvas.width / 2 + 200, canvas.height / 2);
